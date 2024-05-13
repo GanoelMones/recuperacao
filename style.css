@@ -48,3 +48,9 @@ header {
 .escola-conteudo {
     width: 35%;
 }
+
+footer{
+    background-color: black;
+    padding: 15px 0;
+    text-align: center;
+    }
