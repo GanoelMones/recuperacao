@@ -1,56 +1,66 @@
 * {
     margin: 0;
     padding: 0;
-    }
+}
 
 body {
-    font-family: 'Poppins', san;
+    font-family: 'Poppins', sans-serif;
     background-color: #00c0eb;
 }
+
 header {
     background-color: #383d58;
     color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
 }
-.cabecalho-imagem{
-    width: 20%;
-    height: 20%;
-    margin: 18px 0;
+
+.cabecalho-imagem {
+    width: 100px;
+    /* Adjust as needed */
+    height: auto;
+    /* Maintain aspect ratio */
 }
-.cabecalho-lista{
+
+.cabecalho-lista {
+    list-style-type: none;
+}
+
+.cabecalho-item {
     display: inline-block;
-    margin: 0 16px;
-    justify-content: space-around;
-    padding: 24px 0;
-    font-size: 24px;
-    }
-.cabecalho {
-    background-color: #383D58;
-    color: white;
-    display:flex;
-    justify-content: space-around;
-    }
+    margin-left: 20px;
+    font-size: 20px;
+}
 
 .escola-imagem {
     width: 25%;
+    height: auto;
+    /* Maintain aspect ratio */
 }
 
 .escola {
     background-image: linear-gradient(#383d58, #00c0eb);
     color: white;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
-    padding: 24px 0;
-}
-.escola-titulo {
-    padding: 24px 0;
-}
-.escola-conteudo {
-    width: 35%;
+    padding: 50px 20px;
+    text-align: center;
 }
 
-footer{
+.escola-titulo {
+    margin-bottom: 20px;
+}
+
+.escola-conteudo {
+    width: 50%;
+}
+
+footer {
     background-color: black;
-    padding: 15px 0;
+    color: white;
+    padding: 20px;
     text-align: center;
-    }
+}
