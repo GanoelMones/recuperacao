@@ -7,6 +7,10 @@ body {
     font-family: 'Poppins', sans-serif;
     background-color: #f7f7f7;
     /* Light gray background */
+    min-height: 100vh;
+    /* Set minimum height to viewport height */
+    position: relative;
+    /* Set position relative for footer positioning */
 }
 
 header {
@@ -63,9 +67,15 @@ footer {
     color: white;
     padding: 20px;
     text-align: center;
+    position: absolute;
+    /* Set position absolute */
+    bottom: 0;
+    /* Stick to the bottom */
+    width: 100%;
+    /* Full width */
 }
 
-footer img{
+footer img {
     width: 100px;
     height: auto;
 }
