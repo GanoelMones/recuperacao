@@ -5,11 +5,13 @@
 
 body {
     font-family: 'Poppins', sans-serif;
-    background-color: #00c0eb;
+    background-color: #f7f7f7;
+    /* Light gray background */
 }
 
 header {
-    background-color: #383d58;
+    background-color: #333;
+    /* Dark gray background */
     color: white;
     display: flex;
     justify-content: space-between;
@@ -19,9 +21,7 @@ header {
 
 .cabecalho-imagem {
     width: 100px;
-    /* Adjust as needed */
     height: auto;
-    /* Maintain aspect ratio */
 }
 
 .cabecalho-lista {
@@ -37,11 +37,11 @@ header {
 .escola-imagem {
     width: 25%;
     height: auto;
-    /* Maintain aspect ratio */
 }
 
 .escola {
-    background-image: linear-gradient(#383d58, #00c0eb);
+    background-image: linear-gradient(#333, #666);
+    /* Dark gradient background */
     color: white;
     display: flex;
     justify-content: space-between;
@@ -59,7 +59,8 @@ header {
 }
 
 footer {
-    background-color: black;
+    background-color: #333;
+    /* Dark gray background */
     color: white;
     padding: 20px;
     text-align: center;
