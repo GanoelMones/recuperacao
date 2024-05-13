@@ -45,12 +45,11 @@ header {
 
 .escola {
     background-image: linear-gradient(blue, #119);
-    /* Dark gradient background */
     color: white;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 50px 20px;
+    padding: 500px 20px;
     text-align: center;
 }
 
@@ -65,14 +64,11 @@ header {
 footer {
     background-color: #333;
     color: white;
-    padding: 20px;
+    padding: 10px;
     text-align: center;
     position: absolute;
-    /* Set position absolute */
     bottom: 0;
-    /* Stick to the bottom */
     width: 100%;
-    /* Full width */
 }
 
 footer img {
