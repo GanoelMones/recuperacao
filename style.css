@@ -64,4 +64,6 @@ footer {
     color: white;
     padding: 20px;
     text-align: center;
+    width: 40px;
+    height: auto;
 }
