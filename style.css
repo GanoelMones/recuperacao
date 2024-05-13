@@ -47,9 +47,16 @@ header {
     background-image: linear-gradient(blue, #119);
     color: white;
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
+    /* Set flex-direction to column */
+    justify-content: center;
+    /* Align content vertically */
     align-items: center;
-    padding: relative;
+    /* Align content horizontally */
+    height: 100vh;
+    /* Set height to viewport height */
+    padding: 0 20px;
+    /* Add padding */
     text-align: center;
 }
 
