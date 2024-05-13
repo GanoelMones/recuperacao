@@ -40,7 +40,7 @@ header {
 }
 
 .escola {
-    background-image: linear-gradient(#333, #666);
+    background-image: linear-gradient(blue, #119);
     /* Dark gradient background */
     color: white;
     display: flex;
@@ -60,10 +60,12 @@ header {
 
 footer {
     background-color: #333;
-    /* Dark gray background */
     color: white;
     padding: 20px;
     text-align: center;
+}
+
+footer img{
     width: 40px;
     height: auto;
 }
