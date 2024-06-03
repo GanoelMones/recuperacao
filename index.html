@@ -150,23 +150,6 @@
             return score;
         }
 
-        function checkWinner() {
-            if (playerScore === 21 && playerHand.length === 2) {
-                result = 'Você ganhou com um Blackjack!';
-            } else if (playerScore > 21) {
-                result = 'Você estourou!';
-            } else if (dealerScore > 21) {
-                result = 'O dealer estourou! Você ganhou!';
-            } else if (playerScore > dealerScore) {
-                result = 'Você ganhou!';
-            } else if (playerScore < dealerScore) {
-                result = 'Você perdeu!';
-            } else {
-                result = 'Empate!';
-            }
-            resultDisplay.textContent = result;
-        }
-
         function playerHit() {
             if (playerScore < 21) {
                 playerHand.push(deck.pop());
@@ -196,6 +179,23 @@
                 dealerScoreDisplay.textContent = `Pontuação: ${dealerScore}`;
                 displayCards();
             }
+        }
+
+        function checkWinner() {
+            if (playerScore === 21 && playerHand.length === 2) {
+                result = 'Você ganhou com um Blackjack!';
+            } else if (playerScore > 21) {
+                result = 'Você estourou!';
+            } else if (dealerScore > 21) {
+                result = 'O dealer estourou! Você ganhou!';
+            } else if (playerScore > dealerScore) {
+                result = 'Você ganhou!';
+            } else if (playerScore < dealerScore) {
+                result = 'Você perdeu!';
+            } else {
+                result = 'Empate!';
+            }
+            resultDisplay.textContent = result;
         }
 
         createDeck();
