@@ -1,109 +1,208 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Jogo da Velha</title>
-<style>
-    .container {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 100vh;
-    }
-    .board {
-        display: grid;
-        grid-template-columns: repeat(3, 100px);
-        grid-template-rows: repeat(3, 100px);
-        gap: 5px;
-    }
-    .cell {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        border: 1px solid black;
-        font-size: 2em;
-        cursor: pointer;
-    }
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blackjack</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        #game {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        #player-hand, #dealer-hand {
+            margin-bottom: 20px;
+        }
+
+        #player-cards, #dealer-cards {
+            display: flex;
+        }
+
+        .card {
+            width: 70px;
+            height: 100px;
+            background-color: white;
+            border: 1px solid black;
+            margin-right: 10px;
+        }
+
+        button {
+            margin: 5px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
 </head>
 <body>
-
-<div class="container">
-    <div class="board">
-        <div class="cell" onclick="placeMarker(0, 0)"></div>
-        <div class="cell" onclick="placeMarker(0, 1)"></div>
-        <div class="cell" onclick="placeMarker(0, 2)"></div>
-        <div class="cell" onclick="placeMarker(1, 0)"></div>
-        <div class="cell" onclick="placeMarker(1, 1)"></div>
-        <div class="cell" onclick="placeMarker(1, 2)"></div>
-        <div class="cell" onclick="placeMarker(2, 0)"></div>
-        <div class="cell" onclick="placeMarker(2, 1)"></div>
-        <div class="cell" onclick="placeMarker(2, 2)"></div>
+    <div id="game">
+        <div id="player-hand">
+            <h2>Sua Mão</h2>
+            <div id="player-cards"></div>
+            <p id="player-score">Pontuação: 0</p>
+        </div>
+        <div id="dealer-hand">
+            <h2>Mão do Dealer</h2>
+            <div id="dealer-cards"></div>
+            <p id="dealer-score">Pontuação: 0</p>
+        </div>
+        <button id="hit-btn">Hit</button>
+        <button id="stand-btn">Stand</button>
+        <button id="deal-btn">Deal</button>
+        <p id="result"></p>
     </div>
-</div>
+    <script>
+        const suits = ['♠', '♣', '♥', '♦'];
+        const values = ['2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K', 'A'];
 
-<script>
-    let currentPlayer = 'X';
-    let board = [
-        ['', '', ''],
-        ['', '', ''],
-        ['', '', '']
-    ];
+        let deck = [];
+        let playerHand = [];
+        let dealerHand = [];
+        let playerScore = 0;
+        let dealerScore = 0;
+        let result = '';
 
-    function placeMarker(row, col) {
-        if (board[row][col] === '') {
-            board[row][col] = currentPlayer;
-            document.querySelector(`.board > :nth-child(${row * 3 + col + 1})`).innerText = currentPlayer;
-            if (checkWinner()) {
-                alert(currentPlayer + ' venceu!');
-                resetBoard();
-            } else if (checkDraw()) {
-                alert('Empate!');
-                resetBoard();
+        const playerCardsContainer = document.getElementById('player-cards');
+        const dealerCardsContainer = document.getElementById('dealer-cards');
+        const playerScoreDisplay = document.getElementById('player-score');
+        const dealerScoreDisplay = document.getElementById('dealer-score');
+        const resultDisplay = document.getElementById('result');
+        const hitBtn = document.getElementById('hit-btn');
+        const standBtn = document.getElementById('stand-btn');
+        const dealBtn = document.getElementById('deal-btn');
+
+        function createDeck() {
+            for (let suit of suits) {
+                for (let value of values) {
+                    deck.push(`${value}${suit}`);
+                }
+            }
+            shuffleDeck();
+        }
+
+        function shuffleDeck() {
+            for (let i = deck.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [deck[i], deck[j]] = [deck[j], deck[i]];
+            }
+        }
+
+        function dealInitialCards() {
+            playerHand.push(deck.pop());
+            dealerHand.push(deck.pop());
+            playerHand.push(deck.pop());
+            dealerHand.push(deck.pop());
+
+            displayCards();
+        }
+
+        function displayCards() {
+            playerCardsContainer.innerHTML = '';
+            dealerCardsContainer.innerHTML = '';
+
+            for (let card of playerHand) {
+                const cardDiv = document.createElement('div');
+                cardDiv.classList.add('card');
+                cardDiv.textContent = card;
+                playerCardsContainer.appendChild(cardDiv);
+            }
+
+            for (let i = 0; i < dealerHand.length; i++) {
+                const cardDiv = document.createElement('div');
+                if (i === 0) {
+                    cardDiv.textContent = dealerHand[i];
+                } else {
+                    cardDiv.textContent = 'X';
+                }
+                cardDiv.classList.add('card');
+                dealerCardsContainer.appendChild(cardDiv);
+            }
+
+            playerScore = calculateScore(playerHand);
+            dealerScore = calculateScore(dealerHand.slice(0, 1));
+            playerScoreDisplay.textContent = `Pontuação: ${playerScore}`;
+            dealerScoreDisplay.textContent = `Pontuação: ${dealerScore}`;
+        }
+
+        function calculateScore(hand) {
+            let score = 0;
+            let aceCount = 0;
+            for (let card of hand) {
+                const value = card.slice(0, -1);
+                if (value === 'A') {
+                    aceCount++;
+                    score += 11;
+                } else if (['J', 'Q', 'K'].includes(value)) {
+                    score += 10;
+                } else {
+                    score += parseInt(value);
+                }
+            }
+            while (score > 21 && aceCount > 0) {
+                score -= 10;
+                aceCount--;
+            }
+            return score;
+        }
+
+        function checkWinner() {
+            if (playerScore === 21 && playerHand.length === 2) {
+                result = 'Você ganhou com um Blackjack!';
+            } else if (playerScore > 21) {
+                result = 'Você estourou!';
+            } else if (dealerScore > 21) {
+                result = 'O dealer estourou! Você ganhou!';
+            } else if (playerScore > dealerScore) {
+                result = 'Você ganhou!';
+            } else if (playerScore < dealerScore) {
+                result = 'Você perdeu!';
             } else {
-                currentPlayer = currentPlayer === 'X' ? 'O' : 'X';
+                result = 'Empate!';
+            }
+            resultDisplay.textContent = result;
+        }
+
+        function playerHit() {
+            if (playerScore < 21) {
+                playerHand.push(deck.pop());
+                playerScore = calculateScore(playerHand);
+                playerScoreDisplay.textContent = `Pontuação: ${playerScore}`;
+                displayCards();
+                if (playerScore >= 21) {
+                    dealerReveal();
+                    checkWinner();
+                }
             }
         }
-    }
 
-    function checkWinner() {
-        for (let i = 0; i < 3; i++) {
-            if (board[i][0] === board[i][1] && board[i][1] === board[i][2] && board[i][0] !== '') {
-                return true;
+        function dealerReveal() {
+            dealerCardsContainer.innerHTML = '';
+            for (let card of dealerHand) {
+                const cardDiv = document.createElement('div');
+                cardDiv.classList.add('card');
+                cardDiv.textContent = card;
+                dealerCardsContainer.appendChild(cardDiv);
             }
-            if (board[0][i] === board[1][i] && board[1][i] === board[2][i] && board[0][i] !== '') {
-                return true;
-            }
-        }
-        if (board[0][0] === board[1][1] && board[1][1] === board[2][2] && board[0][0] !== '') {
-            return true;
-        }
-        if (board[0][2] === board[1][1] && board[1][1] === board[2][0] && board[0][2] !== '') {
-            return true;
-        }
-        return false;
-    }
-
-    function checkDraw() {
-        for (let row of board) {
-            for (let cell of row) {
-                if (cell === '') return false;
+            dealerScore = calculateScore(dealerHand);
+            dealerScoreDisplay.textContent = `Pontuação: ${dealerScore}`;
+            while (dealerScore < 17) {
+                dealerHand.push(deck.pop());
+                dealerScore = calculateScore(dealerHand);
+                dealerScoreDisplay.textContent = `Pontuação: ${dealerScore}`;
+                displayCards();
             }
         }
-        return true;
-    }
 
-    function resetBoard() {
-        board = [
-            ['', '', ''],
-            ['', '', ''],
-            ['', '', '']
-        ];
-        document.querySelectorAll('.board > .cell').forEach(cell => cell.innerText = '');
-        currentPlayer = 'X';
-    }
-</script>
+        createDeck();
 
+        dealBtn.addEventListener('click', dealInitialCards);
+        hitBtn.addEventListener('click', playerHit);
+        standBtn.addEventListener('click', dealerReveal);
+    </script>
 </body>
 </html>
