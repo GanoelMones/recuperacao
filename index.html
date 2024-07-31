@@ -3,206 +3,99 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blackjack</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-        }
+    <title>Alura plus</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@700&display=swap" rel="stylesheet">
 
-        #game {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        #player-hand, #dealer-hand {
-            margin-bottom: 20px;
-        }
-
-        #player-cards, #dealer-cards {
-            display: flex;
-        }
-
-        .card {
-            width: 70px;
-            height: 100px;
-            background-color: white;
-            border: 1px solid black;
-            margin-right: 10px;
-        }
-
-        button {
-            margin: 5px;
-            padding: 10px 20px;
-            font-size: 16px;
-            cursor: pointer;
-        }
-    </style>
 </head>
 <body>
-    <div id="game">
-        <div id="player-hand">
-            <h2>Sua Mão</h2>
-            <div id="player-cards"></div>
-            <p id="player-score">Pontuação: 0</p>
-        </div>
-        <div id="dealer-hand">
-            <h2>Mão do Dealer</h2>
-            <div id="dealer-cards"></div>
-            <p id="dealer-score">Pontuação: 0</p>
-        </div>
-        <button id="hit-btn">Hit</button>
-        <button id="stand-btn">Stand</button>
-        <button id="deal-btn">Deal</button>
-        <p id="result"></p>
+    <section class="container principal">
+    <div class="container__caixa">
+   <h1 class="container__titulo">Com o Combo+, você pode aproveitar a Alura+ e o Alura Língua por um preço único.</h1> 
+   <img src="/imagens/Combo.png" alt="O combo+ é a junção do alura+ e o alura lingua"class="container__imagem">
+   <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" class="container__botao">Assine por 12x de R$ 120,00*</a>
+   <a href="www.alura.com.br" class="container__botao botao_secundario">Assinar somente o Alura+</a>
+   <p class="container__aviso">O preço pode variar caso a assinatura seja feita em outros planos.</p>
     </div>
-    <script>
-        const suits = ['♠', '♣', '♥', '♦'];
-        const values = ['2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K', 'A'];
+   </section>
 
-        let deck = [];
-        let playerHand = [];
-        let dealerHand = [];
-        let playerScore = 0;
-        let dealerScore = 0;
-        let result = '';
+   <section class="container secundario">
+    <img src="imagens/Pixel True Mockup 1.png" alt="um monitor e um celular com o alura plus aberto" class="secundario__imagem">
+    <div class="container__descricao">
+    <h2 class="descricao__titulo">Assista do seu jeito</h2>
+    <p class="descricao__texto">Aproveite a tela grande da TV ou assista no tablet, laptop, celular e outros aparelhos. Nossa seleção de cursos não para de crescer.</p>
+    </div>
+</section>
 
-        const playerCardsContainer = document.getElementById('player-cards');
-        const dealerCardsContainer = document.getElementById('dealer-cards');
-        const playerScoreDisplay = document.getElementById('player-score');
-        const dealerScoreDisplay = document.getElementById('dealer-score');
-        const resultDisplay = document.getElementById('result');
-        const hitBtn = document.getElementById('hit-btn');
-        const standBtn = document.getElementById('stand-btn');
-        const dealBtn = document.getElementById('deal-btn');
+<section class="container secundario">
+    <div class="container__descricao">
+    <p class="descricao__texto">Só o Combo+ oferece Alura+ e Alura Língua juntos para você ter acesso a cursos de diversas áreas da tecnologia e aprender inglês ou espanhol, onde e como quiser.</p>
+    <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" class="container__botao secundario__botao">Assinar o combo+</a>
+    </div>
+    <img src="imagens/Telas.png" alt="tela da alura plus e do alura lingua" class="secundario__imagem">
+</section>
 
-        function createDeck() {
-            for (let suit of suits) {
-                for (let value of values) {
-                    deck.push(`${value}${suit}`);
-                }
-            }
-            shuffleDeck();
-        }
+<section class="conteiner secundario">
+    <img src="imagens/Notebook.png" alt=" notebook com a pagina do curso HTML e CSS da alura"
+    class="secundario__imagem">
+    <div class="container__descricao">
+        <h2 class="descricao__titulo">baixe seus recursos</h2>
+        <p class="descricao__texto">Baixe e assista quando e onde quiser. Assim, seus favoritos estão sempre com você, até mesmo sem internet.</p>
+    </div>
+</section>
 
-        function shuffleDeck() {
-            for (let i = deck.length - 1; i > 0; i--) {
-                const j = Math.floor(Math.random() * (i + 1));
-                [deck[i], deck[j]] = [deck[j], deck[i]];
-            }
-        }
 
-        function dealInitialCards() {
-            playerHand.push(deck.pop());
-            dealerHand.push(deck.pop());
-            playerHand.push(deck.pop());
-            dealerHand.push(deck.pop());
+<section class="dispositivos">
+<h2 class="dispositivos__titulo">Disponível nos seus dispositivos favoritos</h2>
+<ul class="dispositivos__lista">
+    <li>
+        <img src="imagens/tv.png" alt="icone de televisão">
+        <h3 class="lista__item">TV</h3>
+    </li>
+    <li>
+        <img src="imagens/computador.png" alt="icone de computador">
+        <h3 class="lista__item">computadores</h3>
+    </li>
+    <li>
+        <img src="imagens/celular.png" alt="icone de celular">
+        <h3 class=" lista__item">celular</h3>
+    </li>
+</ul>
+</section>
 
-            displayCards();
-        }
+<footer class="rodape">
+    <img src="imagens/Logo.png" alt="Alura+" class="rodape__logo">
+    <ul class="rodape__lista">
+        <li class="lista__link">
+            <a href="#">Idioma</a>
+        </li>
+        <li class="lista__link">
+            <a href="#">Dispositivos compatíveis</a>
+        </li>
+        <li class="lista__link">
+            <a href="#">contrato de assinatura</a>
+        </li>
+        <li class="lista__link">
+            <a href="#">politica de privacidade</a>
+        </li>
+        <li class="lista__link">
+            <a href="#"> proteção de dados no Brasil</a>
+        </li>
+        <li class="lista__link">
+            <a href="#">anuncios personalizados</a>
+        </li>
+        <li class="lista link">
+            <a href="#">ajuda</a>
+        </li>
+     </ul>
+     <p class="rodape__texto">
+        ® 2021 Alura, Alura+ e Alura Língua. Todos os direitos reservados. Serviço de assinatura paga. Conteúdo sujeito a disponibilidade.</p>
+    <p class="rodape__texto">Alura+ é um serviço pago, baseado em assinatura e sujeito a termos e condições. O serviço Alura+ é comercializado por Aovs Sistemas de Informática S.A., Rua Vergueiro, 3185 - Liberdade, São Paulo - SP, 04101-300, Brasil e CNPJ 05.555.382/0001-33</p>
+    </footer>
 
-        function displayCards() {
-            playerCardsContainer.innerHTML = '';
-            dealerCardsContainer.innerHTML = '';
 
-            for (let card of playerHand) {
-                const cardDiv = document.createElement('div');
-                cardDiv.classList.add('card');
-                cardDiv.textContent = card;
-                playerCardsContainer.appendChild(cardDiv);
-            }
-
-            for (let i = 0; i < dealerHand.length; i++) {
-                const cardDiv = document.createElement('div');
-                if (i === 0) {
-                    cardDiv.textContent = dealerHand[i];
-                } else {
-                    cardDiv.textContent = 'X';
-                }
-                cardDiv.classList.add('card');
-                dealerCardsContainer.appendChild(cardDiv);
-            }
-
-            playerScore = calculateScore(playerHand);
-            dealerScore = calculateScore(dealerHand.slice(0, 1));
-            playerScoreDisplay.textContent = `Pontuação: ${playerScore}`;
-            dealerScoreDisplay.textContent = `Pontuação: ${dealerScore}`;
-        }
-
-        function calculateScore(hand) {
-            let score = 0;
-            let aceCount = 0;
-            for (let card of hand) {
-                const value = card.slice(0, -1);
-                if (value === 'A') {
-                    aceCount++;
-                    score += 11;
-                } else if (['J', 'Q', 'K'].includes(value)) {
-                    score += 10;
-                } else {
-                    score += parseInt(value);
-                }
-            }
-            while (score > 21 && aceCount > 0) {
-                score -= 10;
-                aceCount--;
-            }
-            return score;
-        }
-
-        function playerHit() {
-            if (playerScore < 21) {
-                playerHand.push(deck.pop());
-                playerScore = calculateScore(playerHand);
-                playerScoreDisplay.textContent = `Pontuação: ${playerScore}`;
-                displayCards();
-                if (playerScore >= 21) {
-                    dealerReveal();
-                    checkWinner();
-                }
-            }
-        }
-
-        function dealerReveal() {
-            dealerCardsContainer.innerHTML = '';
-            for (let card of dealerHand) {
-                const cardDiv = document.createElement('div');
-                cardDiv.classList.add('card');
-                cardDiv.textContent = card;
-                dealerCardsContainer.appendChild(cardDiv);
-            }
-            dealerScore = calculateScore(dealerHand);
-            dealerScoreDisplay.textContent = `Pontuação: ${dealerScore}`;
-            while (dealerScore < 17) {
-                dealerHand.push(deck.pop());
-                dealerScore = calculateScore(dealerHand);
-                dealerScoreDisplay.textContent = `Pontuação: ${dealerScore}`;
-                displayCards();
-            }
-        }
-
-        function checkWinner() {
-            if (playerScore === 21 && playerHand.length === 2) {
-                result = 'Você ganhou com um Blackjack!';
-            } else if (playerScore > 21) {
-                result = 'Você estourou!';
-            } else if (dealerScore > 21) {
-                result = 'O dealer estourou! Você ganhou!';
-            } else if (playerScore > dealerScore) {
-                result = 'Você ganhou!';
-            } else if (playerScore < dealerScore) {
-                result = 'Você perdeu!';
-            } else {
-                result = 'Empate!';
-            }
-            resultDisplay.textContent = result;
-        }
-
-        createDeck();
-
-        dealBtn.addEventListener('click', dealInitialCards);
-        hitBtn.addEventListener('click', playerHit);
-        standBtn.addEventListener('click', dealerReveal);
-    </script>
 </body>
-</html>
+ 
+ </html>
