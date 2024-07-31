@@ -21,6 +21,7 @@ body{
     height: 100vh;
     display:grid;
     grid-template-columns: 50% 50%;
+    box-shadow: 0 10 8 #000;
 }
 
 .container__botao{
