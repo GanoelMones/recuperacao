@@ -7,8 +7,8 @@
 
 /* Estilo geral do body */
 body {
-    background-color: #00030C; /* Cor de fundo escura */
-    color: #FFFFFF; /* Texto em branco */
+    background-color: #F7F7F7; /* Cor de fundo mais clara */
+    color: #2A2A2A; /* Cor de texto mais escura para melhor contraste */
     font-family: 'Inter', sans-serif;
     font-size: 16px;
     line-height: 1.5;
@@ -31,14 +31,15 @@ body {
     font-size: 36px;
     font-weight: 700;
     margin-bottom: 1em;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Adiciona sombra ao texto */
+    color: #FFCA00; /* Cor amarela vibrante para o título */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Sombra suave para destacar */
 }
 
 .container__imagem {
     max-width: 100%;
     height: auto;
     margin: 2em 0;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Adiciona sombra suave nas imagens */
 }
 
 .container__caixa {
@@ -59,18 +60,19 @@ body {
 }
 
 .container__botao {
-    background-color: #167BF7;
+    background-color: #167BF7; /* Azul mais vibrante para os botões principais */
     border: none;
 }
 
 .botao_secundario {
     background-color: transparent;
-    border: 2px solid #FFFFFF;
+    border: 2px solid #FFCA00; /* Borda amarela para o botão secundário */
+    color: #FFCA00; /* Texto do botão secundário em amarelo */
 }
 
 .container__aviso {
     font-size: 12px;
-    color: #c0c0c0;
+    color: #A1A1A1; /* Cor de aviso mais suave */
 }
 
 /* Seção secundária */
@@ -85,7 +87,7 @@ body {
     max-width: 50%;
     height: auto;
     margin-left: 2em;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .container__descricao {
@@ -96,14 +98,14 @@ body {
 .descricao__titulo {
     font-size: 36px;
     font-weight: 700;
-    color: #FFFFFF;
+    color: #167BF7; /* Azul para o título da descrição */
     margin-bottom: 0.5em;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Sombra no título */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Sombra no título */
 }
 
 .descricao__texto {
     font-size: 18px;
-    color: #c0c0c0;
+    color: #2A2A2A; /* Texto em cinza escuro para o conteúdo */
 }
 
 /* Seção de dispositivos */
@@ -114,7 +116,7 @@ body {
 
 .dispositivos__titulo {
     font-size: 36px;
-    color: #FFFFFF;
+    color: #167BF7; /* Azul para o título */
     margin-bottom: 2em;
 }
 
@@ -127,7 +129,7 @@ body {
 
 .lista__item {
     font-size: 24px;
-    color: #FFFFFF;
+    color: #2A2A2A;
     text-align: center;
 }
 
@@ -138,14 +140,14 @@ body {
 
 .dispositivos__lista li h3 {
     font-size: 20px;
-    color: #FFFFFF;
+    color: #167BF7; /* Azul para o nome dos dispositivos */
 }
 
 /* Rodapé */
 .rodape {
     text-align: center;
     padding: 2em 0;
-    background-color: #1A1A1A;
+    background-color: #167BF7; /* Azul mais forte para o rodapé */
     color: #FFFFFF;
 }
 
@@ -170,12 +172,12 @@ body {
 }
 
 .lista__link a:hover {
-    color: #167BF7; /* Cor ao passar o mouse */
+    color: #FFCA00; /* Amarelo vibrante ao passar o mouse */
 }
 
 .rodape__texto {
     font-size: 12px;
-    color: #c0c0c0;
+    color: #A1A1A1; /* Texto do rodapé em cinza claro */
     margin: 1em 0;
 }
 
@@ -196,3 +198,4 @@ body {
         gap: 1.5em;
     }
 }
+a
