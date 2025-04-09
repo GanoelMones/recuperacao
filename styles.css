@@ -1,4 +1,4 @@
-/* Estilo Padrão */
+/* Estilos Padrão */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -10,8 +10,21 @@ body {
 header {
     background-color: #004d99;
     color: white;
-    padding: 10px 0;
+    padding: 20px;
     text-align: center;
+}
+
+header .logo {
+    width: 150px;
+    margin-bottom: 10px;
+}
+
+header h1 {
+    margin: 0;
+}
+
+header nav {
+    margin-top: 10px;
 }
 
 header nav a {
@@ -19,41 +32,14 @@ header nav a {
     text-decoration: none;
     padding: 10px 20px;
     margin: 0 10px;
+    display: inline-block;
 }
 
 header nav a:hover {
     background-color: #003366;
 }
 
-main {
-    padding: 20px;
-}
-
-section {
-    margin-bottom: 40px;
-}
-
-footer {
-    background-color: #333;
-    color: white;
-    text-align: center;
-    padding: 10px 0;
-    position: fixed;
-    width: 100%;
-    bottom: 0;
-}
-
-img {
-    width: 100%;
-    height: auto;
-}
-
-.section-title {
-    color: #004d99;
-}
-
 .theme-toggle {
-    text-align: center;
     margin-top: 10px;
 }
 
@@ -68,6 +54,43 @@ button {
 
 button:hover {
     background-color: #003366;
+}
+
+/* Layout Responsivo */
+main {
+    padding: 20px;
+}
+
+section {
+    margin-bottom: 40px;
+}
+
+section img {
+    width: 100%;
+    height: auto;
+    margin-top: 10px;
+    border-radius: 8px;
+}
+
+.section-title {
+    color: #004d99;
+    text-align: center;
+}
+
+p {
+    font-size: 1rem;
+    line-height: 1.6;
+    text-align: justify;
+}
+
+/* Estilo para Links */
+a {
+    color: #004d99;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
 }
 
 /* Modo Escuro */
