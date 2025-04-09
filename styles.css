@@ -1,201 +1,110 @@
-/* Reset básico */
-* {
+/* Estilo Padrão */
+body {
+    font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+    background-color: #f4f4f4;
+    transition: background-color 0.3s, color 0.3s;
 }
 
-/* Estilo geral do body */
-body {
-    background-color: #F7F7F7; /* Cor de fundo mais clara */
-    color: #2A2A2A; /* Cor de texto mais escura para melhor contraste */
-    font-family: 'Inter', sans-serif;
-    font-size: 16px;
-    line-height: 1.5;
-}
-
-/* Estilo da seção principal */
-.principal {
-    background-image: url("imagens/volei-background.jpg"); /* Substitua com uma imagem de fundo do vôlei */
-    background-size: cover;
-    background-position: center;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+header {
+    background-color: #004d99;
+    color: white;
+    padding: 10px 0;
     text-align: center;
-    padding: 0 20px;
 }
 
-.container__titulo {
-    font-size: 36px;
-    font-weight: 700;
-    margin-bottom: 1em;
-    color: #FFCA00; /* Cor amarela vibrante para o título */
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Sombra suave para destacar */
-}
-
-.container__imagem {
-    max-width: 100%;
-    height: auto;
-    margin: 2em 0;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Adiciona sombra suave nas imagens */
-}
-
-.container__caixa {
-    text-align: center;
-    margin: 0;
-}
-
-.container__botao,
-.botao_secundario {
-    padding: 1em 2em;
-    color: #FFFFFF;
-    font-size: 18px;
-    display: inline-block;
+header nav a {
+    color: white;
     text-decoration: none;
-    margin-top: 1em;
-    border-radius: 5px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Adiciona uma sombra */
+    padding: 10px 20px;
+    margin: 0 10px;
 }
 
-.container__botao {
-    background-color: #167BF7; /* Azul mais vibrante para os botões principais */
+header nav a:hover {
+    background-color: #003366;
+}
+
+main {
+    padding: 20px;
+}
+
+section {
+    margin-bottom: 40px;
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+
+img {
+    width: 100%;
+    height: auto;
+}
+
+.section-title {
+    color: #004d99;
+}
+
+.theme-toggle {
+    text-align: center;
+    margin-top: 10px;
+}
+
+button {
+    background-color: #004d99;
+    color: white;
     border: none;
+    padding: 10px;
+    margin: 5px;
+    cursor: pointer;
 }
 
-.botao_secundario {
-    background-color: transparent;
-    border: 2px solid #FFCA00; /* Borda amarela para o botão secundário */
-    color: #FFCA00; /* Texto do botão secundário em amarelo */
+button:hover {
+    background-color: #003366;
 }
 
-.container__aviso {
-    font-size: 12px;
-    color: #A1A1A1; /* Cor de aviso mais suave */
+/* Modo Escuro */
+body.dark-mode {
+    background-color: #121212;
+    color: #e0e0e0;
 }
 
-/* Seção secundária */
-.secundario {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 4em 0;
+header.dark-mode {
+    background-color: #1c1c1c;
 }
 
-.secundario__imagem {
-    max-width: 50%;
-    height: auto;
-    margin-left: 2em;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+footer.dark-mode {
+    background-color: #1c1c1c;
 }
 
-.container__descricao {
-    padding: 2em;
-    max-width: 600px;
+/* Alto Contraste */
+body.high-contrast {
+    background-color: black;
+    color: yellow;
 }
 
-.descricao__titulo {
-    font-size: 36px;
-    font-weight: 700;
-    color: #167BF7; /* Azul para o título da descrição */
-    margin-bottom: 0.5em;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Sombra no título */
+header.high-contrast {
+    background-color: black;
+    color: yellow;
 }
 
-.descricao__texto {
-    font-size: 18px;
-    color: #2A2A2A; /* Texto em cinza escuro para o conteúdo */
+footer.high-contrast {
+    background-color: black;
+    color: yellow;
 }
 
-/* Seção de dispositivos */
-.dispositivos {
-    text-align: center;
-    padding: 4em 0;
+button.high-contrast {
+    background-color: yellow;
+    color: black;
 }
 
-.dispositivos__titulo {
-    font-size: 36px;
-    color: #167BF7; /* Azul para o título */
-    margin-bottom: 2em;
+button.high-contrast:hover {
+    background-color: #ffaa00;
 }
-
-.dispositivos__lista {
-    display: flex;
-    justify-content: center;
-    list-style: none;
-    gap: 2em;
-}
-
-.lista__item {
-    font-size: 24px;
-    color: #2A2A2A;
-    text-align: center;
-}
-
-.lista__item img {
-    max-width: 50px;
-    margin-bottom: 10px;
-}
-
-.dispositivos__lista li h3 {
-    font-size: 20px;
-    color: #167BF7; /* Azul para o nome dos dispositivos */
-}
-
-/* Rodapé */
-.rodape {
-    text-align: center;
-    padding: 2em 0;
-    background-color: #167BF7; /* Azul mais forte para o rodapé */
-    color: #FFFFFF;
-}
-
-.rodape__logo {
-    max-width: 150px;
-    margin-bottom: 1em;
-}
-
-.rodape__lista {
-    display: flex;
-    justify-content: center;
-    list-style-type: none;
-    margin-bottom: 1em;
-}
-
-.lista__link a {
-    text-decoration: none;
-    color: #FFFFFF;
-    margin: 0 20px;
-    font-size: 14px;
-    transition: color 0.3s;
-}
-
-.lista__link a:hover {
-    color: #FFCA00; /* Amarelo vibrante ao passar o mouse */
-}
-
-.rodape__texto {
-    font-size: 12px;
-    color: #A1A1A1; /* Texto do rodapé em cinza claro */
-    margin: 1em 0;
-}
-
-/* Responsividade */
-@media (max-width: 768px) {
-    .secundario {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .secundario__imagem {
-        max-width: 80%;
-        margin-left: 0;
-    }
-
-    .dispositivos__lista {
-        flex-direction: column;
-        gap: 1.5em;
-    }
-}
-a

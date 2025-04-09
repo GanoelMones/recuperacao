@@ -1,71 +1,56 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aprenda Vôlei</title>
+    <title>Site Sobre Vôlei</title>
     <link rel="stylesheet" href="styles.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <section class="container principal">
-        <div class="container__caixa">
-            <h1 class="container__titulo">Aprenda os Fundamentos do Vôlei</h1>
-            <img src="https://images.unsplash.com/photo-1585030212502-d3ac9e3e717d" alt="Imagem de jogadores de vôlei" class="container__imagem">
-            <a href="https://www.youtube.com/watch?v=HgUnRHhJ43w" class="container__botao">Assista ao Tutorial Completo</a>
-            <p class="container__aviso">Aprenda o básico, as regras e as rotações do vôlei de forma simples e prática!</p>
+    <header>
+        <h1>Bem-vindo ao Mundo do Vôlei</h1>
+        <nav>
+            <a href="#historia">História</a>
+            <a href="#regras">Regras</a>
+            <a href="#equipamentos">Equipamentos</a>
+            <a href="#jogadores">Jogadores</a>
+        </nav>
+        <div class="theme-toggle">
+            <button id="toggle-contrast">Alto Contraste</button>
+            <button id="toggle-darkmode">Modo Escuro</button>
         </div>
-    </section>
+    </header>
 
-    <section class="container secundario">
-        <img src="https://images.unsplash.com/photo-1603707178450-d6a29955d4fa" alt="Jogador fazendo saque de vôlei" class="secundario__imagem">
-        <div class="container__descricao">
-            <h2 class="descricao__titulo">Fundamentos Básicos do Vôlei</h2>
-            <p class="descricao__texto">O vôlei é composto por diversos fundamentos, como o saque, passe, levantamento, cortada e bloqueio. Aprenda cada um deles para se tornar um bom jogador!</p>
-        </div>
-    </section>
+    <main>
+        <section id="historia">
+            <h2 class="section-title">História do Vôlei</h2>
+            <p>O vôlei foi criado em 1895 por William G. Morgan, com a intenção de ser uma alternativa mais suave ao basquete. O esporte cresceu rapidamente e hoje é praticado em todo o mundo.</p>
+            <img src="https://via.placeholder.com/800x400" alt="Imagem de história do vôlei">
+        </section>
 
-    <section class="container secundario">
-        <div class="container__descricao">
-            <h2 class="descricao__titulo">Entenda as Rotações no Vôlei</h2>
-            <p class="descricao__texto">No vôlei, a rotação é o movimento que cada jogador faz quando seu time ganha o saque. É importante entender como as rotações funcionam para garantir que todos os jogadores estejam nas posições corretas.</p>
-            <a href="https://www.youtube.com/watch?v=QnpvGmTKi94" class="container__botao secundario__botao">Ver Demonstração das Rotações</a>
-        </div>
-        <img src="https://images.unsplash.com/photo-1587890287227-388d74cd2217" alt="Esquema de rotações de jogadores de vôlei" class="secundario__imagem">
-    </section>
+        <section id="regras">
+            <h2 class="section-title">Regras do Vôlei</h2>
+            <p>O vôlei é jogado entre duas equipes de seis jogadores em uma quadra dividida por uma rede. O objetivo é fazer a bola tocar no chão do time adversário, seja por ataques ou erros do oponente.</p>
+            <img src="https://via.placeholder.com/800x400" alt="Imagem de regras do vôlei">
+        </section>
 
-    <section class="container secundario">
-        <img src="https://images.unsplash.com/photo-1603588290534-1b5b4e2f91c0" alt="Campo de vôlei com jogadores em ação" class="secundario__imagem">
-        <div class="container__descricao">
-            <h2 class="descricao__titulo">O Campo e as Regras do Jogo</h2>
-            <p class="descricao__texto">O campo de vôlei é dividido em duas metades, com uma rede no meio. Cada time tenta fazer pontos ao fazer a bola tocar no campo adversário, respeitando as regras do jogo.</p>
-        </div>
-    </section>
+        <section id="equipamentos">
+            <h2 class="section-title">Equipamentos Necessários</h2>
+            <p>Para praticar o vôlei, os principais equipamentos são a bola, uniformes, tênis adequados e, em competições, a rede e as antenas.</p>
+            <img src="https://via.placeholder.com/800x400" alt="Equipamentos de vôlei">
+        </section>
 
-    <footer class="rodape">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/Volleyball_Icon.svg/1024px-Volleyball_Icon.svg.png" alt="Logo do Vôlei" class="rodape__logo">
-        <ul class="rodape__lista">
-            <li class="lista__link">
-                <a href="#">Regras do Jogo</a>
-            </li>
-            <li class="lista__link">
-                <a href="#">Fundamentos</a>
-            </li>
-            <li class="lista__link">
-                <a href="#">Rotações</a>
-            </li>
-            <li class="lista__link">
-                <a href="#">História do Vôlei</a>
-            </li>
-            <li class="lista__link">
-                <a href="#">Treinamentos</a>
-            </li>
-        </ul>
-        <p class="rodape__texto">© 2025 Vôlei Ensinar. Todos os direitos reservados.</p>
+        <section id="jogadores">
+            <h2 class="section-title">Jogadores Famosos</h2>
+            <p>Jogadores como Giba, Sérgio Santos e Kerri Walsh Jennings são lendas do esporte, conquistando títulos mundiais e olímpicos.</p>
+            <img src="https://via.placeholder.com/800x400" alt="Imagem de jogadores de vôlei">
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 - Site sobre Vôlei</p>
     </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
-
-    
